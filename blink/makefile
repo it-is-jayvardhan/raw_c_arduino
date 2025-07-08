@@ -9,7 +9,9 @@ OBJCOPY = avr-objcopy
 AVRDUDE = avrdude
 
 CFLAGS  = -mmcu=$(MCU) -DF_CPU=$(F_CPU) -Os -Wall
-TARGET  = blank
+
+# Allow user to set TARGET from CLI
+TARGET  ?= main
 SRC     = $(TARGET).c
 
 # ==== Build Rules ====
